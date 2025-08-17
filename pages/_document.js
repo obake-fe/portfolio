@@ -2,8 +2,8 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   const meta = {
-    title: 'Next.js Blog Starter Kit',
-    description: 'Clone and deploy your own Next.js portfolio in minutes.',
+    title: 'Obake Engineer Portfolio',
+    description: "Daichi Tomonaga のポートフォリオサイト",
     image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
   }
 
@@ -21,6 +21,23 @@ export default function Document() {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Daichi Tomonaga",
+              url: "https://your-portfolio.vercel.app",
+              sameAs: [
+                "https://github.com/obake-fe",
+                "https://x.com/obake_fe"
+              ],
+              jobTitle: "Frontend Engineer"
+            }),
+          }}
+        />
+
       </Head>
       <body>
         <Main />
