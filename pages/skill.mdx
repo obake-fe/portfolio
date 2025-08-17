@@ -17,9 +17,9 @@ import {
 } from '@chakra-ui/react'
 
 <VStack spacing={12} align="stretch" p={6}>
-  {categories.map((category) => (
-    <Box key={category.title}>
-      <Heading size="lg" mb={4}>
+  {categories.map((category, index) => (
+    <Box key={category.title} mt={index === 0 ? 0 : 10}>
+      <Heading size="lg" mb={4} mt={0}>
         {category.title}
       </Heading>
       <SimpleGrid columns={[1, 2, 3, 4]} spacing={4} gap={4}>
