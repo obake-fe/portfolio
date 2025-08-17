@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://portfolio-taupe-eight-56.vercel.app/
+
+# Sitemaps
+Sitemap: https://portfolio-taupe-eight-56.vercel.app/sitemap.xml
