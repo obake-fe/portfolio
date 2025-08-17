@@ -4,17 +4,96 @@ title: Home
 date: 2025-08-17
 ---
 
-# Your Name
+import {
+  Avatar,
+  Box,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  SimpleGrid,
+  Text,
+  VStack,
+  List,
+  Flex
+} from '@chakra-ui/react'
 
-Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js and crafting beautiful front-end experiences.
+<VStack spacing={8} p={6} align="stretch">
+  <Heading as="h2" mt={0}>About Me</Heading>
+  <HStack spacing={6}>
+    <Avatar.Root size={'xs'}>
+      <Avatar.Fallback name="Segun Adebayo" />
+      <Avatar.Image src="images/obake.png" />
+    </Avatar.Root>
+  </HStack>
 
-This portfolio is built with **Next.js** and a library called [Nextra](https://nextra.vercel.app/). It allows you to write Markdown and focus on the _content_ of your portfolio.
-
-[**Deploy your own**](https://vercel.com/new/clone?demo-title=Portfolio+Starter+Kit&demo-description=Easily+create+a+portfolio+with+Next.js+and+Markdown.&demo-url=https%3A%2F%2Fdemo.vercel.blog%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F2aC4eHLrOKmT4fnLfoNGK2%2F14b1e6bbe598ec023ffe85001d31e634%2FCleanShot_2022-04-11_at_23.12.01.png&project-name=Portfolio+Starter+Kit&repository-name=portfolio-starter-kit&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnextjs-portfolio-starter&from=templates&skippable-integrations=1&teamCreateStatus=hidden) in a few minutes.
+  <VStack spacing={2} align="start">
+    <HStack>
+      <Text fontWeight="bold" w="150px">Name :</Text>
+      <Text>朝長 大地（Daichi Tomonaga）</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Tag :</Text>
+      <Text>obake-fe</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Birthplace :</Text>
+      <Text>長崎県</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Date of Birth :</Text>
+      <Text>1992/01/26</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Education :</Text>
+      <Text>九州大学薬学部</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Work Experience :</Text>
+      <Text>株式会社 f4samurai（2024.7-）</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Profession :</Text>
+      <Text>フロントエンドエンジニア</Text>
+    </HStack>
+    <HStack>
+      <Text fontWeight="bold" w="150px">Hobbies :</Text>
+      <Text>スポーツ観戦、ゲーム、競馬、読書、旅行、プラネタリウム</Text>
+    </HStack>
+  </VStack>
+</VStack>
 
 ---
 
-- Twitter [@yourname](https://twitter.com/yourname)
-- GitHub [@yourname](https://github.com/yourname)
-- Instagram [@yourname](https://instagram.com/yourname)
-- Email your@name.com
+<VStack p={6} align="stretch">
+  <Heading as="h2" mt={0}>Interest Distribution</Heading>
+
+  <Image src={`images/chart.png`} alt={'chart'} boxSize="480px" />
+</VStack>
+
+---
+
+<VStack p={6} align="stretch">
+  <Heading as="h2" mt={0}>Account</Heading>
+
+<List.Root>
+  <List.Item>
+    <Flex>
+      <Text fontWeight="bold" pr={2} m={0}>GitHub :</Text>
+      <Link href="https://github.com/obake-fe">@obake-fe</Link>
+    </Flex>
+  </List.Item>
+  <List.Item>
+    <Flex>
+      <Text fontWeight="bold" pr={2} m={0}>X :</Text>
+      <Link href="https://x.com/obake_fe" >@obake-fe</Link>
+    </Flex>
+  </List.Item>
+  <List.Item>
+    <Flex>
+      <Text fontWeight="bold" pr={2} m={0}>Qiita :</Text>
+      <Link href="https://qiita.com/obake_fe" >@obake-fe</Link>
+    </Flex>
+  </List.Item>
+</List.Root>
+</VStack>
