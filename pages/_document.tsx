@@ -3,12 +3,12 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document() {
   const meta = {
     title: 'Obake Engineer Portfolio',
-    description: "Daichi Tomonaga のポートフォリオサイト",
+    description: 'Daichi Tomonaga のポートフォリオサイト',
     image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
   }
 
   return (
-    <Html lang="en">
+    <Html lang="en" suppressHydrationWarning>
       <Head>
         <meta name="robots" content="follow, index" />
         <meta name="description" content={meta.description} />
@@ -25,19 +25,15 @@ export default function Document() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Daichi Tomonaga",
-              url: "https://your-portfolio.vercel.app",
-              sameAs: [
-                "https://github.com/obake-fe",
-                "https://x.com/obake_fe"
-              ],
-              jobTitle: "Frontend Engineer"
-            }),
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Daichi Tomonaga',
+              url: 'https://your-portfolio.vercel.app',
+              sameAs: ['https://github.com/obake-fe', 'https://x.com/obake_fe'],
+              jobTitle: 'Frontend Engineer'
+            })
           }}
         />
-
       </Head>
       <body>
         <Main />
