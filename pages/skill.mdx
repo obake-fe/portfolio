@@ -4,7 +4,7 @@ title: Skills
 date: 2025-08-17
 ---
 
-import { skills } from './constants/skills'
+import { categories } from './constants/skills'
 import {
   Box,
   Button,
@@ -16,36 +16,49 @@ import {
   Image
 } from '@chakra-ui/react'
 
-<Heading as="h2">FrontEnd</Heading>
-
-<SimpleGrid columns={[1, 2, 3]} spacing={6} gap={2}>
-  {skills.map((skill) => (
-    <Box
-      key={skill.name}
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      p={4}
-      _hover={{ shadow: 'lg', transform: 'scale(1.05)', transition: '0.2s' }}
-    >
-      <VStack spacing={4}>
-        <Image
-          src={`/images/icons/${skill.icon}`}
-          alt={skill.name}
-          boxSize="60px"
-        />
-        <Text fontSize="xl" fontWeight="bold">
-          {skill.name}
-        </Text>
-        <Text fontSize="sm" color="gray.500">
-          {skill.years} 年
-        </Text>
-        <Text fontSize="sm" textAlign="center">
-          {skill.comment}
-        </Text>
-      </VStack>
+<VStack spacing={12} align="stretch" p={6}>
+  {categories.map((category) => (
+    <Box key={category.title}>
+      <Heading size="lg" mb={4}>
+        {category.title}
+      </Heading>
+      <SimpleGrid columns={[1, 2, 3, 4]} spacing={4} gap={4}>
+        {category.skills.map((skill) => (
+          <Box
+            key={skill.name}
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            p={4}
+            _hover={{
+              shadow: 'lg',
+              transform: 'scale(1.05)',
+              transition: '0.2s'
+            }}
+          >
+            <VStack spacing={3}>
+              <Image
+                src={`images/icons/${skill.icon}`}
+                alt={skill.name}
+                boxSize="60px"
+              />
+              <Text fontSize="xl" fontWeight="bold">
+                {skill.name}
+              </Text>
+              {skill.years && (
+                <Text fontSize="sm" color="gray.500">
+                  {skill.years} 年
+                </Text>
+              )}
+              {skill.comment && (
+                <Text fontSize="sm" textAlign="center">
+                  {skill.comment}
+                </Text>
+              )}
+            </VStack>
+          </Box>
+        ))}
+      </SimpleGrid>
     </Box>
   ))}
-</SimpleGrid>
-
-<Heading as="h2">Testing & CI</Heading>
+</VStack>
