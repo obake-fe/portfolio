@@ -1,0 +1,55 @@
+---
+type: page
+title: Projects
+date: 2025-08-17
+---
+
+import { career, work } from '../constants/work'
+import {
+  Box,
+  Button,
+  Heading,
+  HStack,
+  Link,
+  SimpleGrid,
+  Tag,
+  Text,
+  VStack,
+  Wrap,
+  WrapItem
+} from '@chakra-ui/react'
+
+<VStack align="start" spacing={6}>
+
+<Heading as={'h2'}>Career</Heading>
+
+{career.map((c) => (
+
+<HStack key={c.year} spacing={4} align="start">
+  <Text fontWeight="bold" w="80px">
+    {c.year} .{c.month}
+  </Text>
+  <Box>
+    <Text fontWeight="bold">
+      {c.title}
+    </Text>
+    <Text>{c.description}</Text>
+  </Box>
+</HStack>
+))}
+
+</VStack>
+
+---
+
+<Heading as={'h2'}>Products</Heading>
+
+<SimpleGrid columns={[1, null, 2]} spacing={6} gap={4}>
+  {work.map((p) => (
+    <Box key={p.title} p={6} borderWidth="1px" borderRadius="md" shadow="md">
+      <Text fontWeight="bold" fontSize="xl" mt={0}>{p.title}</Text>
+      <Text my={2}>{p.description}</Text>
+      <Link href={p.link} color="teal.500" isExternal>Visit Project</Link>
+    </Box>
+  ))}
+</SimpleGrid>
